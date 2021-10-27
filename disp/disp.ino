@@ -624,7 +624,37 @@ void loop(void)
           
         }
 
+        }
+        if (incbr_btn.justPressed()&& !screen) {
+        incbr_btn.drawButton(true);
         
+        if(brightness<100){
+            brightness=brightness+5;
+            if(brightness<10)
+          {
+            brSchStr="0"+String(brightness);
+          }
+           else{
+            brSchStr=String(brightness);
+          }
+          if(brightness==100){
+            tft.fillRoundRect(26,146,68,48,15,BLACK);
+             tft.setCursor(35,160);
+              tft.setTextSize(3);
+              tft.setTextColor(WHITE);
+              tft.println(brSchStr);
+            
+          }
+          else{
+            tft.fillRoundRect(26,146,68,48,15,BLACK);
+             tft.setCursor(45,160);
+              tft.setTextSize(3);
+              tft.setTextColor(WHITE);
+              tft.println(brSchStr);
+          }
+        }  
+        
+    }
 
 
 #endif
