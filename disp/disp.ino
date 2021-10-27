@@ -655,6 +655,29 @@ void loop(void)
         }  
         
     }
+    if (decbr_btn.justPressed()&& !screen) {
+        decbr_btn.drawButton(true);
+        if(brightness>0){
+          brightness=brightness-5;
+          if(brightness<10)
+          {
+            brSchStr="0"+String(brightness);
+          }
+          else{
+            brSchStr=String(brightness);
+          }
+          
+         tft.fillRoundRect(26,146,68,48,15,BLACK);
+             tft.setCursor(35,160);
+              tft.setTextSize(3);
+              tft.setTextColor(WHITE);
+              tft.println(brSchStr);
+            
+       
+          
+        }
+   
+    }
 
 
 #endif
