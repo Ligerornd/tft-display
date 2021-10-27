@@ -784,6 +784,55 @@ void loop(void)
         }
    
     }
+     if (back_btn.justPressed()&& !screen) {
+        
+        screen=true;
+        
+        Homescreen();
+//       
+        
+    }
+
+    if (schon_btn.justPressed()&& !screen) {
+        
+        screen=true;
+        sch=true;
+        Homescreen();
+        hour=0;
+        minute=0;
+        sec=0;
+        timer=false;
+        timesch=schhr+":"+schmin+":"+"00";
+        tft.fillRoundRect(30,185,100,20,5,BLACK);
+        
+        tft.drawRoundRect(10,45,140,140,5,BLACK);
+        tft.drawRoundRect(10,45,140,170,5,WHITE);
+        tft.setTextSize(2);
+
+       
+        
+        tft.setCursor(25,140);
+        tft.setTextColor(GREY);
+        tft.setTextSize(2);
+        tft.print("Scheduled");
+        tft.setCursor(25,160);
+        tft.print("Duration");
+
+        tft.setCursor(30,185);
+        tft.setTextColor(ORANGE);
+        tft.print(timesch);
+
+        
+        tft.drawRoundRect(350,6,20,20,5,WHITE);
+          
+           tft.setCursor(355,9);
+           tft.setTextColor(ORANGE);
+           tft.setTextSize(2);
+           tft.print("S");
+       
+        
+    }
+}
 
 
 #endif
