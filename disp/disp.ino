@@ -729,7 +729,61 @@ void loop(void)
        
           
         }
+
+    }
+     if (incmin_btn.justPressed()&& !screen) {
+        incmin_btn.drawButton(true);
+        
+        if(intschmin<=59){
+          if(intschmin==59){
+            intschmin=-1;
+          }
+          
+            intschmin=intschmin+1;
+            if(intschmin<10)
+          {
+            schmin="0"+String(intschmin);
+          }
+           else{
+            schmin=String(intschmin);
+          }
+
+          tft.fillRoundRect(296,146,48,48,15,BLACK);
+             tft.setCursor(305,160);
+              tft.setTextSize(3);
+              tft.setTextColor(WHITE);
+              tft.println(schmin);
+              
+          
+        }  
+        
+    }
+    if (decmin_btn.justPressed()&& !screen) {
+        decmin_btn.drawButton(true);
+        if(intschmin>=0){
+          if(intschmin==0){
+            intschmin=60;
+          }
+          intschmin=intschmin-1;
+          if(intschmin<10)
+          {
+            schmin="0"+String(intschmin);
+          }
+          else{
+            schmin=String(intschmin);
+          }
+          
+         tft.fillRoundRect(296,146,48,48,15,BLACK);
+             tft.setCursor(305,160);
+              tft.setTextSize(3);
+              tft.setTextColor(WHITE);
+              tft.println(schmin);
+            
+       
+          
+        }
    
+    }
 
 
 #endif
